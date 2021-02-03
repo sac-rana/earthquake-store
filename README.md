@@ -1,2 +1,2 @@
 # earthquake-store
-Seismological data of India from 2015-2018
+Earthquakes in India from the year 2015-2018.
