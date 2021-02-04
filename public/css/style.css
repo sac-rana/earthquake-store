@@ -1,9 +1,18 @@
+*{
+	margin:0;
+}
+
 .navbar{
 	background: rgb(104,101,161);
 	background: linear-gradient(90deg, rgba(104,101,161,1) 0%, rgba(204,188,40,1) 22%, rgba(13,190,173,0.9304096638655462) 82%, rgba(0,212,255,1) 100%);
 	display: flex;
 	justify-content: center;
 }
+
+.row{
+	text-align:center;
+}
+
 .col-lg-6{
 	background:cyan;
 }
@@ -11,3 +20,22 @@
 .img-fluid{
 	height: 350;
 }
+
+.information{
+	display: flex;
+	flex-direction:column;
+}
+
+.list{
+	flex-direction: column;
+}
+
+ul{
+	list-style-type: none;
+	font-size:2rem;
+}
+
+div.information h1.info {
+	font-size:2.5rem;
+}
+
