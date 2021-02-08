@@ -1,14 +1,30 @@
 const express = require("express");
-const path = require("path");
-const app = express();
+const { join } = require("path");
+const { Client } = require("pg");
 
-app.use(express.static(path.join(__dirname, "public")));
+const app = express();
+const client = new Client({
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+});
+client
+  .connect()
+  .then(() => console.log("Connected to database"))
+  .catch(err => console.log(err.stack));
+
+app.use(express.static(join(process.cwd(), "public")));
+app.set("views", join(process.cwd(), "public", "views"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  client
+    .query("select * from earthquake_data limit 10")
+    .then(result => res.render("index", { rows: result.rows }))
+    .catch(err => console.log(err));
 });
 
-app.listen(8000, () => {
-  console.log(`server is running on port 8000`);
+app.listen(process.env.PORT, () => {
+  console.log(`server is running on port ${process.env.PORT}`);
 });
