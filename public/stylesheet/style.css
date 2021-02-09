@@ -1,0 +1,25 @@
+*{
+	margin:0;
+}
+.navbar{
+	background: rgb(104,101,161);
+	background: linear-gradient(90deg, rgba(104,101,161,1) 0%, rgba(204,188,40,1) 22%, rgba(13,190,173,0.9304096638655462) 82%, rgba(0,212,255,1) 100%);
+	display: flex;
+	justify-content: center;
+	padding:20;
+}
+.row{
+	display: flex;
+}
+
+.col{
+	flex:1;
+	background: cyan;
+}
+.col *{
+	text-align:center;
+}
+
+.col h2{
+	padding:5px 0;
+}
