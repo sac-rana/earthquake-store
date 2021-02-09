@@ -4,7 +4,7 @@
   "description": "Seismological data of India from 2015-2018",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config --watch ./public ./server.js"
+    "dev": "nodemon -r dotenv/config -e * --watch ./public ./server.js"
   },
   "repository": {
     "type": "git",
