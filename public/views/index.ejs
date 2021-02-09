@@ -15,6 +15,30 @@
     <h2>From Lower to Higher Magnitude.</h2>
     <h2>Any Region from INDIA.</h2>
   </div>
-
-  <%- include('partials/footer') %>
+ 
 </div>
+<div class='tble'>
+<div class='box'>
+<table>
+  <th>ID</th>
+  <th>Month</th>
+  <th>Year</th>
+  <th>Magnitude</th>
+
+<% for(let i=0;i<rows.length;i++){ %>
+
+   <tr>
+  <td><%= rows[i].id %></td>
+  <td><%= rows[i].month %></td>
+  <td><%= rows[i].year %></td>
+  <td><%= rows[i].magnitude %></td>
+  
+  </tr>
+
+
+  <% } %>
+
+  </table>
+</div>
+</div>
+ <%- include('partials/footer') %>

@@ -23,3 +23,23 @@
 .col h2{
 	padding:5px 0;
 }
+
+.tble{
+	display: flex;
+	justify-content: center;
+	background:pink;
+}
+
+.box{
+	border:1px solid red;
+	border-radius: 10px;
+}
+
+table, th, td {
+
+  text-align:center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding:10px;
+}
+

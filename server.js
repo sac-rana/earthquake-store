@@ -1,6 +1,7 @@
 const express = require("express");
 const { join } = require("path");
 const { Client } = require("pg");
+// const ejs = require('ejs')
 
 const app = express();
 const client = new Client({
@@ -21,10 +22,11 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   client
     .query("select * from earthquake_data limit 10")
-    .then(result => res.render("index", { rows: result.rows }))
-    .catch(err => console.log(err));
+    .then(result => {res.render("index", { rows: result.rows }) // result.rows
+    	console.log('result');})
+    .catch(err => console.log(result));
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT , () => {
   console.log(`server is running on port ${process.env.PORT}`);
 });
